@@ -28,3 +28,13 @@ config BR2_TARGET_ROOTFS_RECOVERY_AML_WIPE_USERDATA_NEVER
        bool "no"
 
 endchoice
+
+config BR2_TARGET_AML_LOGO
+	string "Amlogic U-Boot static logo image"
+	depends on BR2_TARGET_ROOTFS_RECOVERY_AML
+	help
+	 Bitmap file that will be copied to aml_logo or logo partition,
+	 depends on system configuration
+	 
+	 Should be Windows BMP image 1280x720px max, 24bit. If not selected,
+	 default XBMC image will be used as boot image
