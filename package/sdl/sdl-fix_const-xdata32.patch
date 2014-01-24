@@ -1,0 +1,14 @@
+--- SDL-1.2.14.car/src/video/x11/SDL_x11sym.h	2014-01-24 09:39:42.724853965 -0300
++++ SDL-1.2.14/src/video/x11/SDL_x11sym.h	2014-01-24 09:53:01.924833016 -0300
+@@ -163,9 +163,10 @@ SDL_X11_SYM(Bool,XShmQueryExtension,(Dis
+  * Not required...these only exist in code in headers on some 64-bit platforms,
+  *  and are removed via macros elsewhere, so it's safe for them to be missing.
+  */
++
+ #ifdef LONG64
+ SDL_X11_MODULE(IO_32BIT)
+-SDL_X11_SYM(int,_XData32,(Display *dpy,register long *data,unsigned len),(dpy,data,len),return)
++SDL_X11_SYM(int,_XData32,(Display *dpy,register _Xconst long *data,unsigned len),(dpy,data,len),return)
+ SDL_X11_SYM(void,_XRead32,(Display *dpy,register long *data,long len),(dpy,data,len),)
+ #endif
+ 
